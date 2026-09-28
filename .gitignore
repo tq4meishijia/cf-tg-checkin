@@ -1,0 +1,11 @@
+node_modules/
+.dev.vars
+.ddev/
+.wrangler/
+.npm-cache/
+.pnpm-store/
+dist/
+
+.dbg*.png
+.login_*.log
+.tg_code.txt

@@ -1,0 +1,29 @@
+{
+  "name": "tg-checkin-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create tg-checkin-db",
+    "db:migrate:local": "wrangler d1 migrations apply tg-checkin-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply tg-checkin-db --remote",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260927.1",
+    "pnpm": "^12.6.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2",
+    "wrangler": "^4.141.0"
+  },
+  "dependencies": {
+    "hono": "^4.13.9",
+    "telegram": "^2.26.22"
+  },
+  "optionalDependencies": {
+    "@esbuild/win32-x64": "^0.28.2"
+  }
+}

@@ -1,0 +1,18 @@
+name = "tg-checkin"
+main = "src/index.ts"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[triggers]
+crons = ["* * * * *"]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+# /api/* 永远先打到 Worker，不要被静态资源/SPA 回退拦截
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tg-checkin-db"
+database_id = "5965162f-0f03-4f75-875f-7e3724cb7e2a"
